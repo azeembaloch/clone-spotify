@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Clone — Music for everyone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">◉</span> Spotify</div>
+    <nav class="main-nav">
+      <a class="nav-link active" href="#"><span>⌂</span> Home</a>
+      <a class="nav-link" href="#search"><span>⌕</span> Search</a>
+      <a class="nav-link" href="#library"><span>▤</span> Your Library</a>
+    </nav>
+    <div class="library-head" id="library">
+      <span>Your playlists</span><button id="newPlaylist" title="Create playlist">＋</button>
+    </div>
+    <div class="playlist-list" id="playlistList">
+      <button class="playlist-item">♡ Liked Songs</button>
+      <button class="playlist-item">Daily Mix</button>
+      <button class="playlist-item">Chill Vibes</button>
+      <button class="playlist-item">Workout Mix</button>
+    </div>
+    <div class="sidebar-note">Create your own music space.<br><span>Play your favourite tracks.</span></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="arrows"><button aria-label="Go back">‹</button><button aria-label="Go forward">›</button></div>
+      <label class="search-box" id="search"><span>⌕</span><input id="searchInput" type="search" placeholder="What do you want to play?"></label>
+      <button class="profile">A</button>
+    </header>
+
+    <section class="welcome">
+      <p class="eyebrow">YOUR MUSIC, YOUR MOMENT</p>
+      <h1>Good evening</h1>
+      <p>Find the sound that moves you.</p>
+    </section>
+
+    <section class="quick-grid" id="quickGrid">
+      <button class="quick-card" data-play="0"><img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=120&q=80" alt=""><b>Acoustic Sessions</b><span>▶</span></button>
+      <button class="quick-card" data-play="1"><img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=120&q=80" alt=""><b>Late Night Beats</b><span>▶</span></button>
+      <button class="quick-card" data-play="2"><img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=120&q=80" alt=""><b>Guitar Moments</b><span>▶</span></button>
+      <button class="quick-card" data-play="3"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=120&q=80" alt=""><b>Feel Good</b><span>▶</span></button>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><div><p class="eyebrow">MADE FOR YOU</p><h2>Popular right now</h2></div><a href="#tracks">Show all</a></div>
+      <div class="music-grid" id="musicGrid"></div>
+    </section>
+    <section class="section">
+      <div class="section-title"><div><p class="eyebrow">KEEP THE VIBE</p><h2>All tracks</h2></div><span class="muted" id="trackCount"></span></div>
+      <div class="track-table" id="tracks">
+        <div class="track-row track-header"><span>#</span><span>Title</span><span>Album</span><span>Duration</span></div>
+        <div id="trackRows"></div>
+      </div>
+    </section>
+    <footer>Spotify Clone UI · Made with HTML, CSS & JavaScript</footer>
+  </main>
+
+  <div class="player">
+    <div class="now-playing">
+      <img id="currentCover" src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=100&q=80" alt="Album cover">
+      <div><b id="currentTitle">Choose a track</b><span id="currentArtist">Artist</span></div>
+      <button id="likeBtn" title="Like song">♡</button>
+    </div>
+    <div class="player-center">
+      <div class="controls">
+        <button id="shuffleBtn" title="Shuffle">⤨</button>
+        <button id="prevBtn" title="Previous">|◀</button>
+        <button class="play-button" id="playBtn" title="Play">▶</button>
+        <button id="nextBtn" title="Next">▶|</button>
+        <button id="repeatBtn" title="Repeat">↻</button>
+      </div>
+      <div class="timeline"><span id="currentTime">0:00</span><input id="progress" type="range" min="0" max="100" value="0"><span id="duration">0:00</span></div>
+    </div>
+    <div class="volume"><span>♫</span><input id="volume" type="range" min="0" max="1" step="0.01" value="0.7"></div>
+  </div>
+  <audio id="audio"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
